@@ -58,7 +58,7 @@ public class TinyUrlResource {
         //Need more robust Url validation
 		tinyUrlManagementService.update(userId.toLowerCase(), id, tinyUrl);
 
-		return ResponseEntity.ok("resource saved");
+		return ResponseEntity.ok().build();
 	}
 
     @PostMapping("/urls")
