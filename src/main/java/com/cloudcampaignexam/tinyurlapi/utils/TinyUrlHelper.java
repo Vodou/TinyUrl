@@ -12,18 +12,7 @@ import java.util.stream.IntStream;
 public class TinyUrlHelper {
     // Hardcode list for now find better way in the future
     private final ArrayList<Character> AVAILABLECHARS = new ArrayList<Character>(73);
-    // Allowed Url chars (0-9), (A-Z, a-z), ($–_.+!*‘(),)
-    // 10 + 26 + 26 + 11 = 73 possible characters
-    // url suffixSize = n  
-    // Math.pow(73, n) = total combinations 
-    // n = 5 -> total combinations = 2,073,071,593 
-    //will want to store only suffix in DB char(5) 20 btyes approx 40 GB of space for all entries
-    //2,073,071,593 / 1000 urls per hour generated = 2,073,071 hours of url generation
-    //2,073,071 / 24 hours in a day / 365 days in a year = 236 years of url generation before it runs out
-    //needs to be balanced with db space and url creation collision.
-    //Max runtime for site maybe 20 years -> 20 / 142 collision rate at end of life will be 8% might be acceptable 
-    // n = 6 -> DB max size approx 300 GB, 17,275 years of generation, collision rate = .1%, seems like overkill
-
+   
     public TinyUrlHelper(){
         String availablesAlphaString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         String availablesAlphaStringLower = availablesAlphaString.toLowerCase();
