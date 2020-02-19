@@ -40,7 +40,7 @@ Model for shortened URL
 * createdDate (Date)
 
 ### InMemoryCache (Authored by crunchify)
-LRUCache wrapper used to store a maximum number of tinyUrl to URL mapping. Also has optional TTL functionality to remove stale entries using a daemon thread.
+LRUCache wrapper used to store a maximum number of tinyUrl to URL mapping. Also has optional TTL functionality to remove stale entries using a daemon thread. Current max hardcoded to 1000 For demo purposes.
 #### Constructor
 ```public InMemoryCache(long timeToLive, final long timerInterval, int maxItems)``` 
 #### Fields
@@ -66,7 +66,7 @@ Currently the API only has a cache for the redirect all other operations pull fr
     * Allows for Minimum amount of time it has to exist after first hit
     * Accounts for number of hits during a certain time period
     * If it falls below zero it would get queued up for deletion
-
+* Instrumenting application to monitor health
 * Tailoring TTL for cached objects
 * Scaling out the system
 * Additional Unit tests
